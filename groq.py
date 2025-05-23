@@ -1,9 +1,6 @@
 import requests
 
-headers = {
-    "Authorization": "",
-    "Content-Type": "application/json",
-}
+
 
 data = {
     "model": "llama3-8b-8192",
