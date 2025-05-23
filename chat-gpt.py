@@ -2,7 +2,7 @@ import openai
 from openai import OpenAI
 
 # Initialize client with API key
-client = OpenAI(api_key="sk-proj-")  # replace with your actual API key
+client = OpenAI(api_key="")  # replace with your actual API key
 
 response = client.chat.completions.create(
     model="gpt-4o-mini",  # or "gpt-3.5-turbo"
