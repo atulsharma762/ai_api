@@ -1,7 +1,7 @@
 import requests
 
 headers = {
-    "Authorization": "Bearer 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",
+    "Authorization": "Bearer ",
     "Content-Type": "application/json",
 }
 
