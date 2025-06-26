@@ -1,0 +1,38 @@
+﻿course_id,course_name,yes_no,is_updated
+1,Java,no,Done
+2,Python,no,Done
+3,Javascript,no,Done
+4,C,no,Done
+5,Python Selenium,no,Done
+6,AWS Cloud,no,Done
+7,Reactjs,no,Done
+8,Interview Questions,no,Done
+9,Coding Problems,no,Done
+14,Quiz,no,Done
+16,AI-ML Basics,no,Done
+17,C++,no,Done
+18,Golang,yes,Pending
+19,Rust,no,Pending
+20,Kotlin,no,Pending
+21,Typescript,no,Pending
+22,Docker & Kubernetes,no,Done
+23,Terraform ,no,Pending
+24,Azure Cloud,no,Pending
+25,Google Cloud Platform (GCP),no,Pending
+26,CI/CD with GitHub Actions or Jenkins,no,Pending
+27,Data Science with Python,no,Pending
+28,Machine Learning with TensorFlow / Scikit-Learn,no,Pending
+29,Deep Learning with PyTorch,no,Pending
+30,Natural Language Processing (NLP),no,Pending
+31,Next.js,no,Pending
+32,Node.js & Express – backend with JS,no,Pending
+33,Full Stack MERN / MEAN,no,Pending
+34,Tailwind CSS,no,Pending
+35,Svelte / Vue.js ,no,Pending
+36,Database Technologies,no,Pending
+37,PHP,no,Pending
+38,Computer Vision Basics,no,Pending
+39,Java Selenium,no,Pending
+40,Web Scraping with BeautifulSoup & Requests,no,Pending
+41,API Automation,no,Pending
+42,Advanced SQL & Query Optimization,no,Pending

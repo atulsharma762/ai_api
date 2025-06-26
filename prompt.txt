@@ -1,0 +1,34 @@
+This topic: #topic_name# is one of the topics in my full course "#course_name#".
+
+Return exhaustive and structured topic content in this format only:
+
+[
+  {
+    "sub_topic_name": "string",
+    "content": [
+      {
+        "format": "text" | "text_code" | "text_quote" | "code" | "image",
+        "detail": [
+          {
+            "type": "text" | "code" | "quote" | "image",
+            "content": "string in HTML or plain text"
+          }
+        ]
+      }
+    ]
+  }
+]
+
+Guidelines:
+1. Output must be pure JSON only. No markdown code blocks (like ```json) or explanations.
+2. Use HTML inside "content" for format: "text".
+3. Format HTML to be clean, semantic, well-structured, and visually easy to understand. Use tags like <ul>, <ol>, <li>, <strong>, <em>, <table>, <thead>, <tbody>, <tr>, <td>, <h3>, <p> where appropriate.
+4. Use `text_code` if you want to combine explanation and code together in one block.
+5. Use `text_quote` if it's relevant — quotes must feel natural and be placed where contextually appropriate.
+6. Do not apply any syntax highlighting or special formatting to code. Just raw code strings.
+7. Use realistic, helpful examples. Avoid fluff.
+8. Do not include ANY extra explanation or note outside the JSON. I am using this in a script.
+9. I want a strict JSON-only response in the specified format.
+10. I want exhaustive coverage of the topic: include all major methods, terminology, variations, edge cases, patterns, pitfalls, best practices, tools, APIs, alternatives relevant to this topic.
+11. For any library or API usage (like Selenium), include a full list of all commonly used methods and their purpose, not just one or two.
+12. Do not skip any important part of the topic, even if it makes the output long. Length is not a constraint.
