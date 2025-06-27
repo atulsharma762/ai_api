@@ -11,28 +11,29 @@
 14,Quiz,no,Done
 16,AI-ML Basics,no,Done
 17,C++,no,Done
-18,Golang,yes,Pending
-19,Rust,no,Pending
-20,Kotlin,no,Pending
-21,Typescript,no,Pending
+18,Golang,no,Done
+19,Rust,no,Done
+20,Kotlin,no,Done
+21,Typescript,no,Done
 22,Docker & Kubernetes,no,Done
-23,Terraform ,no,Pending
-24,Azure Cloud,no,Pending
-25,Google Cloud Platform (GCP),no,Pending
-26,CI/CD with GitHub Actions or Jenkins,no,Pending
-27,Data Science with Python,no,Pending
-28,Machine Learning with TensorFlow / Scikit-Learn,no,Pending
-29,Deep Learning with PyTorch,no,Pending
-30,Natural Language Processing (NLP),no,Pending
-31,Next.js,no,Pending
-32,Node.js & Express – backend with JS,no,Pending
-33,Full Stack MERN / MEAN,no,Pending
-34,Tailwind CSS,no,Pending
-35,Svelte / Vue.js ,no,Pending
-36,Database Technologies,no,Pending
-37,PHP,no,Pending
-38,Computer Vision Basics,no,Pending
-39,Java Selenium,no,Pending
-40,Web Scraping with BeautifulSoup & Requests,no,Pending
-41,API Automation,no,Pending
-42,Advanced SQL & Query Optimization,no,Pending
+23,Terraform ,no,Done
+24,Azure Cloud,no,Done
+25,Google Cloud Platform (GCP),no,Done
+26,CI/CD with GitHub Actions or Jenkins,no,Done
+27,Data Science with Python,no,Done
+28,Machine Learning with TensorFlow / Scikit-Learn,no,Done
+29,Deep Learning with PyTorch,no,Done
+30,Natural Language Processing (NLP),no,Done
+31,Next.js,no,Done
+32,Node.js & Express – backend with JS,no,Done
+33,Full Stack MERN-MEAN,no,Done
+34,Tailwind CSS,no,Done
+35,Svelte,no,Done
+36,Database Technologies,no,Done
+37,PHP,no,Done
+38,Computer Vision Basics,no,Done
+39,Java Selenium,no,Done
+40,Web Scraping with BeautifulSoup & Requests,no,Done
+41,API Automation,no,Done
+42,Advanced SQL & Query Optimization,no,Done
+35,Vue.js,no,Done

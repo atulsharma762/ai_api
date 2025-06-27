@@ -6,47 +6,11 @@ from chatgpt import ChatGPTClient
 str_topic="Kotlin Basics"
 obj_ai=ChatGPTClient()
 obj_db = Database()
-course_name="Python Selenium"
-# topic_list = [
-#     "Introduction to Selenium",
-#     "Environment Setup",
-#     "Selenium Commands",
-#     "Web Element Interactions",
-#     "Working with Forms",
-#     "XPath and CSS Selectors",
-#     "Synchronization in Selenium",
-#     "Handling Alerts and Pop-ups",
-#     "Working with Frames and Windows",
-#     "Handling Web Tables",
-#     "Mouse and Keyboard Actions",
-#     "Taking Screenshots",
-#     "Scrolling and JavaScript Execution",
-#     "Handling File Uploads and Downloads",
-#     "Selenium with Test Frameworks",
-#     "Page Object Model (POM)",
-#     "Data-Driven Testing",
-#     "Headless Browser Testing",
-#     "Advanced Topics",
-#     "Best Practices in Selenium Automation"
-# ]
+course_name="API Automation"
 
 topic_list = [
-    "Working with Forms",
-    "XPath and CSS Selectors",
-    "Synchronization in Selenium",
-    "Handling Alerts and Pop-ups",
-    "Working with Frames and Windows",
-    "Handling Web Tables",
-    "Mouse and Keyboard Actions",
-    "Taking Screenshots",
-    "Scrolling and JavaScript Execution",
-    "Handling File Uploads and Downloads",
-    "Selenium with Test Frameworks",
-    "Page Object Model (POM)",
-    "Data-Driven Testing",
-    "Headless Browser Testing",
-    "Advanced Topics",
-    "Best Practices in Selenium Automation"
+    "API Automation using Java",
+    "API Automation using Python"
 ]
 
 

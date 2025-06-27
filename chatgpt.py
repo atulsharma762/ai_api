@@ -51,17 +51,21 @@ class ChatGPTClient:
 
     def parse_content(self, response):
         try:
-            raw = response['choices'][0]['message']['content'].strip()
+            # Access message content correctly
+            raw = response.choices[0].message.content.strip()
+
+            # Strip markdown code fences if present
             if raw.startswith("```json"):
-                raw = raw[7:]  # remove ```json
+                raw = raw[7:]
             if raw.endswith("```"):
-                raw = raw[:-3]  # remove ```
+                raw = raw[:-3]
 
             parsed_json = json.loads(raw)
             return parsed_json
         except Exception as e:
             print(str(e))
-            return response['choices'][0]['message']['content']
+            # As fallback, return the raw content instead of raising
+            return response.choices[0].message.content
 
     def get_topic_list(self, topic_name: str = "Java") -> str:
         print("fetching response...")

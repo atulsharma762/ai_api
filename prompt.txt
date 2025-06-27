@@ -2,6 +2,7 @@ This topic: #topic_name# is one of the topics in my full course "#course_name#".
 
 Return exhaustive and structured topic content in this format only:
 
+Dont give Introduction to API Automation as its already covered in separate topic.
 [
   {
     "sub_topic_name": "string",
@@ -11,7 +12,7 @@ Return exhaustive and structured topic content in this format only:
         "detail": [
           {
             "type": "text" | "code" | "quote" | "image",
-            "content": "string in HTML or plain text"
+            "content": "string in HTML or plain text for type = text and it should be plain text for code/quote and html should be in proper readable and user friendly format: If there is something of comparative analysis or something, give in beautiful html table format with proper inline css., If you are giving official reference anywhere make sure you give proper hyperlinks with proper css and make sure to open them in new tab"
           }
         ]
       }
@@ -32,3 +33,10 @@ Guidelines:
 10. I want exhaustive coverage of the topic: include all major methods, terminology, variations, edge cases, patterns, pitfalls, best practices, tools, APIs, alternatives relevant to this topic.
 11. For any library or API usage (like Selenium), include a full list of all commonly used methods and their purpose, not just one or two.
 12. Do not skip any important part of the topic, even if it makes the output long. Length is not a constraint.
+13. Keep in mind about html code you give for format type "text", you should give proper inline formatting which works on parsing the string to html
+14. Make sure wherever you are giving html code, it is absolutely stunning and with proper css.
+15. If it is a heading, then make it bold and give proper inline css.
+13. on Keep in mind about html code you give for format type "text", you should give proper inline formatting which works on parsing the string to html
+14. I again emphasis on this - Make sure wherever you are giving html code, it is absolutely stunning and with proper css.
+
+

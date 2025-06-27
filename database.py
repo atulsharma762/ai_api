@@ -83,17 +83,31 @@ class Database:
     #         print(f"Query failed: {err}")
     #         raise
 
-    def upsert_sub_topics(self, course_id, topic_name, topic_content, sub_topics_to_covered):
+    import json
+
+    def upsert_sub_topics(self, course_id, topic_name, topic_content, sub_topics_to_covered, topic_order_id):
         try:
-            sub_topics_to_covered = json.dumps(sub_topics_to_covered)
+            if isinstance(sub_topics_to_covered, list):
+                print("DEBUG: list: Serializing sub_topics_to_covered to JSON")
+                sub_topics_to_covered = json.dumps(sub_topics_to_covered)
+            elif not isinstance(sub_topics_to_covered, str):
+                print("DEBUG: str: Serializing sub_topics_to_covered to JSON")
+                sub_topics_to_covered = json.dumps([str(sub_topics_to_covered)])
+
+            if isinstance(topic_content, (list, dict)):
+                print("DEBUG: Serializing topic_content to JSON")
+                topic_content = json.dumps(topic_content)
 
             query = """
-            INSERT INTO course_topic_details (course_id, topic_name, topic_content, sub_topics_to_covered)
-            VALUES (%s, %s, %s, %s)
-            ON DUPLICATE KEY UPDATE topic_content = VALUES(topic_content),
-                                    sub_topics_to_covered = VALUES(sub_topics_to_covered);
+            INSERT INTO course_topic_details (course_id, topic_name, sub_topics_to_covered, topic_content, topic_order_id)
+            VALUES (%s, %s, %s, %s, %s)
+            ON DUPLICATE KEY UPDATE 
+                sub_topics_to_covered = VALUES(sub_topics_to_covered),
+                topic_order_id = VALUES(topic_order_id),
+                topic_content = VALUES(topic_content);
             """
-            self.cursor.execute(query, (course_id, topic_name, topic_content, sub_topics_to_covered))
+            self.cursor.execute(query, (course_id, topic_name, sub_topics_to_covered, topic_content, topic_order_id))
+
             affected = self.cursor.rowcount
             if affected == 1:
                 print("Inserted new row.")
@@ -101,6 +115,7 @@ class Database:
                 print("Updated existing row.")
             else:
                 print("No change (data may already be the same).")
+
         except Exception as err:
             print(f"Query failed: {err}")
             raise
