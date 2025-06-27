@@ -5,7 +5,7 @@ __pycache__/
 .env
 # C extensions
 *.so
-
+chat-gpt.py
 # Distribution / packaging
 .Python
 build/
