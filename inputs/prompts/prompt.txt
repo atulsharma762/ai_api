@@ -2,7 +2,6 @@ This topic: #topic_name# is one of the topics in my full course "#course_name#".
 
 Return exhaustive and structured topic content in this format only:
 
-Dont give Introduction to API Automation as its already covered in separate topic.
 [
   {
     "sub_topic_name": "string",
@@ -20,6 +19,8 @@ Dont give Introduction to API Automation as its already covered in separate topi
   }
 ]
 
+
+Here is subtopic list : #sub_topic_list#
 Guidelines:
 1. Output must be pure JSON only. No markdown code blocks (like ```json) or explanations.
 2. Use HTML inside "content" for format: "text".
@@ -36,7 +37,24 @@ Guidelines:
 13. Keep in mind about html code you give for format type "text", you should give proper inline formatting which works on parsing the string to html
 14. Make sure wherever you are giving html code, it is absolutely stunning and with proper css.
 15. If it is a heading, then make it bold and give proper inline css.
-13. on Keep in mind about html code you give for format type "text", you should give proper inline formatting which works on parsing the string to html
-14. I again emphasis on this - Make sure wherever you are giving html code, it is absolutely stunning and with proper css.
+16. Dont make same heading appear twice like this
+{
+		"sub_topic_name": "What is Kotlin?",
+		"content": [
+			{
+				"format": "text",
+				"detail": [
+					{
+						"type": "text",
+						"content": "<h3 style=\"font-weight:bold;\">What is Kotlin?</h3><p>Kotlin is a modern, statically-typed programming language that is fully interoperable with Java. Developed by JetBrains, Kotlin is designed to be concise, safe, and tool-friendly. It is primarily used for Android development, but it can also be used for server-side and web development.</p><ul style=\"list-style-type:disc; margin-left:20px;\"><li><strong>Concise:</strong> Reduces boilerplate code.</li><li><strong>Safe:</strong> Avoids null pointer exceptions.</li><li><strong>Interoperable:</strong> Works seamlessly with Java.</li><li><strong>Tool-friendly:</strong> Supports various IDEs and build tools.</li></ul>"
+					}
+				]
+			}
+		]
+	}
+	Here "What is Kotlin?" is appearing twice one in header and then h3. I dont want that.
+
+17. If introduction related, topic_name then make sure to give some information  on history and  IDEs to use. and links to install.
+
 
 

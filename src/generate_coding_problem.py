@@ -1,19 +1,16 @@
 import json
 
-from database import Database
-from chatgpt import ChatGPTClient
+from utils.database import Database
+from utils.chatgpt import ChatGPTClient
 import pandas as pd
 
-df = pd.read_csv('topic_list.csv')
+df = pd.read_csv('../inputs/coding_problems.csv')
 yes_topics = df[df['yes_no'] == 'yes']
 
 obj_ai=ChatGPTClient()
 obj_db = Database()
 
-
-df = pd.read_csv('topic_list.csv')
 topic_list=[]
-
 
 def convert_to_json(topic_list):
     try:
@@ -29,7 +26,7 @@ for index, row in df.iterrows():
     yes_no = row['yes_no']
     if yes_no=='yes':
         print(f"{course_id}. {course_name} (Selected: {yes_no})")
-        topic_list=obj_ai.get_topic_list(course_name)
+        topic_list=obj_ai.get_coding_topic_list(course_name)
         topic_list_json=convert_to_json(topic_list)
         print(topic_list)
         topic_order_id=1
@@ -37,7 +34,7 @@ for index, row in df.iterrows():
         print(f"Total Topics: {len(topic_list_json)}")
         for dict_sub_topic in topic_list_json:
                 print(f"topic_order_id={topic_order_id}/{topic_length}/{course_name}")
-                topic_content = obj_ai.get_topic_content_specific(dict_sub_topic['sub_topic_name'], course_name, dict_sub_topic['sub_topics_to_covered'])
+                topic_content = obj_ai.get_coding_content_specific(dict_sub_topic['sub_topic_name'], course_name, dict_sub_topic['sub_topics_to_covered'])
                 obj_db.upsert_sub_topics(course_id, dict_sub_topic['sub_topic_name'],topic_content, dict_sub_topic['sub_topics_to_covered'], topic_order_id)
                 topic_order_id = topic_order_id+1
 

@@ -1,0 +1,52 @@
+This topic: #topic_name# is one of the topics in my full course: "#course_name#".
+
+Return frequently asked interview questions and their detailed answers, structured in the following JSON format:
+
+[
+  {
+    "sub_topic_name": "Actual interview question here — do NOT use general topic names like 'Closures in JavaScript'",
+    "content": [
+      {
+        "format": "<one of: text, code, text_quote>",
+        "detail": [
+          {
+            "type": "<text | code | quote | image>",
+            "content": "The content matching the 'type'. For 'text', use valid, readable HTML with inline CSS. For 'code', include full, correct code (Java or JavaScript preferred). For 'quote', include meaningful technical quotes. For 'image', describe or give image source URL."
+          }
+        ]
+      }
+    ]
+  }
+]
+
+Subtopics to cover:
+#sub_topic_list#
+
+Guidelines:
+1. This is for interview preparation. Every object must be a real interview question with a complete, high-value answer.
+   Use the full question in 'sub_topic_name' (e.g., 'What are closures in JavaScript?') — do NOT use labels like 'Closures'.
+2. In the "content" array:
+   - Use `"text"` for pure HTML explanations (e.g., <p>, <ul>, <ol>, <strong>, etc.)
+   - Use `"text_code"` if there's both explanation and code — in that order.
+     → In this case, the "detail" array must have exactly two items: first with `"type": "text"`, second with `"type": "code"`.
+   - Use `"code"` for pure code (no explanation).
+   - Use `"text_quote"` if including a quote after the explanation.
+3. HTML in `"content"` should be:
+   - Clean, valid, and well-formatted
+   - Styled with inline CSS where appropriate (especially in <table>)
+   - Using <h3> tags only inside the "text" content (not in sub_topic_name)
+4. Avoid fluff, repetition, or generic filler. Only high-signal content.
+5. Include:
+   - Edge cases
+   - Common follow-up questions
+   - Real-world scenarios
+   - Best practices and caveats
+6. Output must be:
+   - Strictly valid JSON
+   - No Markdown
+   - No backticks
+   - No comments
+   - No extra explanations
+7. The number of questions is not limited — include everything relevant for complete interview readiness.
+8. Ask real practical questions, not just theoretical. Practical means not coding problems but real world questions.
+9. It is very important that Wherever possible, you explain with real time examples

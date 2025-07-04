@@ -32,3 +32,4 @@ Rules:
 7. This is important Be exhaustive and give all topics.
 8. I am emphasising that give as many topics as possible and granular, length is not a constraint. I dont want user to miss any topic.
 9. Add a quick reference kind of topic at last which has all the useful information like methods, summary or a quick guide.
+10. Add a cheat sheet at the end as well.

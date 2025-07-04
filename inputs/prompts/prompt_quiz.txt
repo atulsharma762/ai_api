@@ -1,0 +1,51 @@
+Generate #ques_count# multiple-choice questions for the category "#category#", corresponding to the specific sub-category "#sub_category#". Each question must be included in the exact CSV format below:
+
+
+CSV Columns:
+category,question,level,options,answer,language,sub_category
+
+Formatting Rules:
+
+0. Langauge=#sub_category#
+1. question: Must be a valid escaped JSON object with:
+   - "text": The question text (mandatory)
+   - "code": An optional code snippet
+     - Use \n for newlines
+     - Escape double quotes as ""
+
+   Example (with code):
+   "{""text"":""What is the purpose of the following code snippet?"",""code"":""def divide_numbers(a, b):\n try:\n  result = a / b\n  return result\n except ZeroDivisionError:\n  return \""Cannot divide by zero\""""}"
+
+   Example (conceptual):
+   "{""text"":""What is the primary purpose of an operating system?""}"
+
+2. options: Must be a valid escaped JSON object with exactly 4 distinct choices:
+   "{""option1"":""..."",""option2"":""..."",""option3"":""..."",""option4"":""...""}"
+
+3. answer: Must match exactly one of the keys: option1, option2, option3, or option4
+
+4. level distribution:
+   - ~40% easy (level: 1)
+   - ~40% medium (level: 2)
+   - ~20% hard (level: 3)
+
+5. Include both code-based and conceptual questions (not all coding).
+
+6. Code snippets (if used):
+   - Must be syntactically valid
+   - Clean and logically complete
+
+7. Output must start with this header:
+category,question,level,options,answer,language,sub_category
+
+8. Ensure CSV is:
+   - Properly escaped
+   - Raw (no markdown, no explanation, no headings or footers)
+   - Suitable for pandas.read_csv() without errors
+
+Summary of Bulk Rules:
+- Generate exactly #ques_count# questions
+- Mix of conceptual and coding-based questions
+- Each with 4 unique, meaningful options
+- Return raw CSV only — no extra text or formatting
+- Strict field order: category,question,level,options,answer,language,sub_category

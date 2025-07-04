@@ -83,15 +83,12 @@ class Database:
     #         print(f"Query failed: {err}")
     #         raise
 
-    import json
 
     def upsert_sub_topics(self, course_id, topic_name, topic_content, sub_topics_to_covered, topic_order_id):
         try:
             if isinstance(sub_topics_to_covered, list):
-                print("DEBUG: list: Serializing sub_topics_to_covered to JSON")
                 sub_topics_to_covered = json.dumps(sub_topics_to_covered)
             elif not isinstance(sub_topics_to_covered, str):
-                print("DEBUG: str: Serializing sub_topics_to_covered to JSON")
                 sub_topics_to_covered = json.dumps([str(sub_topics_to_covered)])
 
             if isinstance(topic_content, (list, dict)):
@@ -118,6 +115,34 @@ class Database:
 
         except Exception as err:
             print(f"Query failed: {err}")
+            raise
+
+    def upsert_quiz(self, df):
+        try:
+            query = """
+            INSERT INTO quiz 
+            (category, question, level, options, answer, language, sub_category)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            ON DUPLICATE KEY UPDATE 
+                question = VALUES(question),
+                level = VALUES(level),
+                options = VALUES(options),
+                answer = VALUES(answer),
+                language = VALUES(language),
+                sub_category = VALUES(sub_category);
+            """
+
+            records = df[
+                ["category", "question", "level", "options", "answer", "language", "sub_category"]].values.tolist()
+
+            self.cursor.executemany(query, records)
+            self.connection.commit()
+
+            print(f"{self.cursor.rowcount} row(s) inserted or updated.")
+
+        except Exception as err:
+            print(f"Query failed: {err}")
+            self.connection.rollback()
             raise
 
     # Run any custom query

@@ -1,0 +1,59 @@
+This topic: #topic_name# is one of the topics in my full course: "#course_name#".
+
+Return ALL real-world coding interview problems relevant to this topic — from beginner to advanced — and their complete, high-quality solutions, structured in the following strict JSON format:
+
+[
+  {
+    "sub_topic_name": "Full problem title here — must be an actual interview question, not a topic label",
+    "content": [
+      {
+        "format": "text",
+        "detail": [
+          {
+            "type": "text",
+            "content": "<div style='font-size: 13px; line-height: 1.6; color: #333;'><p><strong>Problem:</strong> Given a string <code>s</code>, return the length of the longest substring without repeating characters.</p><p><strong>Example:</strong> <code>Input: \"abcabcbb\"</code> → <code>Output: 3</code></p><p><strong>Constraints:</strong> <code>1 &lt;= s.length &lt;= 10^4</code></p><p><strong>Hint:</strong> Use a sliding window to track unique characters efficiently.</p></div>"
+          }
+        ]
+      },
+      {
+        "format": "code",
+        "detail": [
+          {
+            "type": "code",
+            "content": "def length_of_longest_substring(s: str) -> int:\n    seen = set()\n    left = 0\n    max_len = 0\n    for right in range(len(s)):\n        while s[right] in seen:\n            seen.remove(s[left])\n            left += 1\n        seen.add(s[right])\n        max_len = max(max_len, right - left + 1)\n    return max_len"
+          }
+        ]
+      }
+    ]
+  }
+]
+
+Subtopics to cover:
+#sub_topic_list#
+
+Guidelines:
+
+1. Include **ALL possible coding interview questions** under this topic — easy, medium, and hard. Do **not** miss any important question.
+2. Each item must use a **full question title** in `sub_topic_name` — e.g., “Find the longest substring without repeating characters”.
+   Do **not** use labels like "Arrays" or "Dynamic Programming".
+3. The `"text"` content must:
+   - Use clean HTML with `<div>`, `<p>`, `<strong>`, and inline styles
+   - Be **brief**, readable, and look like a **professional subtext**
+   - Use **font-size: 13px**, short sentences, and clean examples
+4. Include:
+   - One-line **examples**
+   - One-line **constraints**
+   - Optional short **hints** or **edge case notes**
+5. Use `"code"` or `"text_code"` formats for solutions
+   - All code must be correct and use **Python**, **Java**, or **JavaScript**
+   - Include edge cases and follow-up if relevant
+6. Output must be:
+   - Strictly valid JSON
+   - No Markdown
+   - No backticks
+   - No comments or extra text
+
+This content will be used in a **professional coding interview prep platform**, so it must be:
+- Technically strong
+- Concise and beautiful
+- Exhaustive across all question levels
