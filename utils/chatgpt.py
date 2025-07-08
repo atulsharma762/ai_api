@@ -157,6 +157,21 @@ class ChatGPTClient:
         )
         return self.extract_csv(response.choices[0].message.content)
 
+    def get_blog_content(self, blog_title) -> str:
+        print(f"fetching response...{blog_title}")
+        prompt_text = self.load_prompt("../inputs/prompts/prompt_blog.txt")
+        prompt_text = prompt_text.replace("#topic_name#", blog_title)
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt_text}
+            ],
+            temperature=0.7
+        )
+        return self.extract_json(response.choices[0].message.content)
+
+
     def extract_json(self, raw_response: str):
         """
         Extracts and parses JSON content from GPT responses,

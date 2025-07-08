@@ -145,6 +145,52 @@ class Database:
             self.connection.rollback()
             raise
 
+    def upsert_blog(self, blog_title, topic_content):
+        try:
+            query = """
+                INSERT INTO blogs (blog_title, topic_content)
+                VALUES (%s, %s)
+                ON DUPLICATE KEY UPDATE
+                    topic_content = VALUES(topic_content)
+            """
+
+            self.cursor.execute(query, (blog_title, topic_content))
+            affected = self.cursor.rowcount
+            if affected == 1:
+                print("Inserted new row.")
+            elif affected == 2:
+                print("Updated existing row.")
+            else:
+                print("No change (data may already be the same).")
+            self.connection.commit()
+        except Exception as e:
+            print("Error:", e)
+
+    # def upsert_blog(self, blog_title, topic_content):
+    #     try:
+    #         query = """
+    #             INSERT INTO blogs (blog_title, topic_content)
+    #             VALUES (%s, %s)
+    #             ON DUPLICATE KEY UPDATE
+    #                 blog_title = VALUES(blog_title)
+    #         """
+    #
+    #         self.cursor.execute(query, (blog_title, topic_content))
+    #         affected = self.cursor.rowcount
+    #         if affected == 1:
+    #             print("Inserted new row.")
+    #         elif affected == 2:
+    #             print("Updated existing row.")
+    #         else:
+    #             print("No change (data may already be the same).")
+    #         self.connection.commit()
+    #         print(f"{self.cursor.rowcount} row(s) inserted or updated.")
+    #
+    #     except Exception as err:
+    #         print(f"Query failed: {err}")
+    #         self.connection.rollback()
+    #         raise
+
     # Run any custom query
     def run_query(self, query: str, values: tuple = None):
         self.cursor.execute(query, values or ())
