@@ -51,7 +51,7 @@ class ChatGPTClient:
 
     def get_interview_content_specific(self, topic_name: str = "Java", course_name: str="Java", sub_topic_list=None) -> str:
         print(f"fetching response for {topic_name}...")
-        prompt_text = self.load_prompt("../inputs/prompt_specific_interview.txt")
+        prompt_text = self.load_prompt("../inputs/prompts/prompt_specific_interview.txt")
         prompt_text=prompt_text.replace("#topic_name#",topic_name)
         prompt_text = prompt_text.replace("#course_name#", course_name)
         prompt_text = prompt_text.replace("#sub_topic_list#", str(sub_topic_list))
@@ -115,7 +115,7 @@ class ChatGPTClient:
 
     def get_interview_topic_list(self, topic_name: str = "Java") -> str:
         print("fetching response...")
-        prompt_text = self.load_prompt("../inputs/prompt_topics_interview.txt")
+        prompt_text = self.load_prompt("../inputs/prompts/prompt_topics_interview.txt")
         prompt_text = prompt_text.replace("#topic_name#", topic_name)
         response = self.client.chat.completions.create(
             model=self.model,
@@ -141,11 +141,11 @@ class ChatGPTClient:
         )
         return response.choices[0].message.content
 
-    def get_quiz_list(self, category: str = "Programming", sub_category: str = "Java", category_id: int=1, ques_count: int= 10) -> str:
+    def get_quiz_list(self, category: str = "Programming", sub_category: str = "Java", ques_count: int= 10) -> str:
         print("fetching response...")
         prompt_text = self.load_prompt("../inputs/prompts/prompt_quiz.txt")
         prompt_text = prompt_text.replace("#category#", category)
-        prompt_text = prompt_text.replace("#sub_category#", sub_category)
+        prompt_text = prompt_text.replace("#course_name#", sub_category)
         prompt_text = prompt_text.replace("#ques_count#", str(ques_count))
         response = self.client.chat.completions.create(
             model=self.model,

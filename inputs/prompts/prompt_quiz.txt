@@ -1,12 +1,11 @@
-Generate #ques_count# multiple-choice questions for the category "#category#", corresponding to the specific sub-category "#sub_category#". Each question must be included in the exact CSV format below:
+Generate #ques_count# multiple-choice questions for the category "#category#", corresponding to the specific course_name "#course_name#". Each question must be included in the exact CSV format below:
 
 
 CSV Columns:
-category,question,level,options,answer,language,sub_category
+category,question,level,options,answer,course_name
 
 Formatting Rules:
 
-0. Langauge=#sub_category#
 1. question: Must be a valid escaped JSON object with:
    - "text": The question text (mandatory)
    - "code": An optional code snippet
@@ -36,7 +35,7 @@ Formatting Rules:
    - Clean and logically complete
 
 7. Output must start with this header:
-category,question,level,options,answer,language,sub_category
+category,question,level,options,answer,course_name,sub_category
 
 8. Ensure CSV is:
    - Properly escaped
@@ -48,4 +47,4 @@ Summary of Bulk Rules:
 - Mix of conceptual and coding-based questions
 - Each with 4 unique, meaningful options
 - Return raw CSV only — no extra text or formatting
-- Strict field order: category,question,level,options,answer,language,sub_category
+- Strict field order: category,question,level,options,answer,course_name

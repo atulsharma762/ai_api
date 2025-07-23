@@ -1,4 +1,4 @@
-﻿"category_id","category","sub_category",yes_no
+﻿category_id,category,sub_category,yes_no
 1,Programming Language,Python,no
 2,Programming Language,Javascript,no
 3,Programming Language,Java,no
@@ -6,13 +6,13 @@
 5,Programming Language,Ruby,no
 6,Programming Language,Swift,no
 7,Programming Language,PHP,no
+8,Web Development,HTML,no
+9,Web Development,CSS,no
+10,Web Development,Reactjs,no
 11,Programming Language,C,no
 12,Programming Language,Typescript,no
-13,Automation,Python Selenium,no
-14,Automation,Java Selenium,no
-15,Automation,API Automation,no
+13,Automation,Python Selenium,yes
+14,Automation,Java Selenium,yes
+15,Automation,API Automation,yes
 16,Database Technologies,SQL,no
-8,Web Development,HTML,yes
-9,Web Development,CSS,yes
-10,Web Development,Reactjs,yes
 54,Programming Language,C#,no

@@ -1,0 +1,63 @@
+﻿S.No.,course_name,course_type
+1,Java,core
+2,Python,core
+3,Javascript,core
+4,C,core
+5,Python Selenium,automation
+6,AWS Cloud,cloud
+7,Reactjs,web_development
+8,Data Structures,interview_ques
+66,Swift,core
+67,Astro,web_development
+14,Quiz,learning
+15,Compiler,tool
+16,AI-ML Basics,ai_ml
+17,C++,core
+18,Golang,core
+19,Rust,core
+20,Kotlin,core
+48,Python Interview Questions,interview_ques
+21,Typescript,core
+22,Docker & Kubernetes,cloud
+23,Terraform ,cloud
+24,Azure Cloud,cloud
+25,Google Cloud Platform (GCP),cloud
+47,Java Interview Questions,interview_ques
+26,CI-CD with GitHub Actions or Jenkins,cloud
+27,Data Science with Python,ai_ml
+28,Machine Learning with TensorFlow-Scikit-Learn,ai_ml
+29,Deep Learning with PyTorch,ai_ml
+46,DBMS (Database Management Systems),interview_ques
+30,Natural Language Processing (NLP),ai_ml
+31,Next.js,web_development
+32,Node.js & Express – backend with JS,web_development
+33,Full Stack MERN-MEAN,web_development
+34,Tailwind CSS,web_development
+45,OOP (Object-Oriented Programming),interview_ques
+35,Svelte,web_development
+36,Database Technologies,database
+37,PHP,core
+38,Computer Vision Basics,ai_ml
+39,Java Selenium,automation
+44,Agorithms,interview_ques
+40,Web Scraping with BeautifulSoup & Requests,automation
+43,Vue.js,web_development
+41,API Automation,automation
+42,Advanced SQL & Query Optimization,database
+49,Javascript Interview Questions,interview_ques
+50,C Interview Questions,interview_ques
+51,AWS Cloud Interview Questions,interview_ques
+52,Reactjs Interview Questions,interview_ques
+53,C Interview Questions,interview_ques
+54,C#,core
+55,Python Coding Problems,coding_problems
+56,Java Coding Problems,coding_problems
+57,C++ Coding Problems,coding_problems
+58,JavaScript Coding Problems,coding_problems
+59,C Coding Problems,coding_problems
+60,Go Coding Problems,coding_problems
+61,Ruby Coding Problems,coding_problems
+62,Swift Coding Problems,coding_problems
+63,Kotlin Coding Problems,coding_problems
+64,TypeScript Coding Problems,coding_problems
+65,PHP Coding Problems,coding_problems

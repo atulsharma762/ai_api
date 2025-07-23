@@ -1,18 +1,16 @@
 import json
-from datetime import datetime
 
 from utils.database import Database
 from utils.chatgpt import ChatGPTClient
 import pandas as pd
-input_path = '../inputs/interview_list.csv'
-df = pd.read_csv(input_path)
+
+df = pd.read_csv('../inputs/interview_list.csv')
 yes_topics = df[df['yes_no'] == 'yes']
 
 obj_ai=ChatGPTClient()
 obj_db = Database()
 
 topic_list=[]
-today_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 def convert_to_json(topic_list):
     try:
@@ -39,26 +37,6 @@ for index, row in df.iterrows():
                 topic_content = obj_ai.get_interview_content_specific(dict_sub_topic['sub_topic_name'], course_name, dict_sub_topic['sub_topics_to_covered'])
                 obj_db.upsert_sub_topics(course_id, dict_sub_topic['sub_topic_name'],topic_content, dict_sub_topic['sub_topics_to_covered'], topic_order_id)
                 topic_order_id = topic_order_id+1
-        df.at[index, 'yes_no'] = 'no'
-        df.at[index, 'status'] = 'Done'
-        df.at[index, 'updated_at'] = today_str
 
-
-saved = False
-max_retries = 3  # Optional: to avoid infinite loops
-retry_count = 0
-
-while not saved and retry_count < max_retries:
-    try:
-        df.to_csv(input_path, index=False)
-        print("\n✅ file saved successfully.")
-        saved = True
-    except PermissionError:
-        print(f"\n❌ Cannot save '{input_path}'. It is currently open.")
-        input("🔁 Please close the file in Excel and press Enter to retry...")
-        retry_count += 1
-    except Exception as e:
-        print(f"\n❌ Unexpected error while saving Excel file: {e}")
-        break
 
 

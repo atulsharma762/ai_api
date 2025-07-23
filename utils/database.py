@@ -121,19 +121,18 @@ class Database:
         try:
             query = """
             INSERT INTO quiz 
-            (category, question, level, options, answer, language, sub_category)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            (category, question, level, options, answer, course_name)
+            VALUES (%s, %s, %s, %s, %s, %s)
             ON DUPLICATE KEY UPDATE 
+                category = VALUES(category),
                 question = VALUES(question),
                 level = VALUES(level),
                 options = VALUES(options),
                 answer = VALUES(answer),
-                language = VALUES(language),
-                sub_category = VALUES(sub_category);
+                course_name = VALUES(course_name);
             """
 
-            records = df[
-                ["category", "question", "level", "options", "answer", "language", "sub_category"]].values.tolist()
+            records = df[["category", "question", "level", "options", "answer", "course_name"]].values.tolist()
 
             self.cursor.executemany(query, records)
             self.connection.commit()

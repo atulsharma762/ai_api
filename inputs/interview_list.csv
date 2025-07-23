@@ -1,12 +1,13 @@
-﻿course_id,course_name,yes_no,is_updated
-8,Data Structures,no,Pending
-48,Python Interview Questions,yes,In Progress
-47,Java Interview Questions,no,Done
-46,DBMS (Database Management Systems),no,Pending
-45,OOP (Object-Oriented Programming),no,Pending
-44,Agorithms,no,Pending
-49,Javascript Interview Questions,no,Pending
-50,C Interview Questions,no,Pending
-51,AWS Cloud Interview Questions,no,Pending
-52,Reactjs Interview Questions,no,Pending
-53,C Interview Questions,no,Pending
+course_id,course_name,yes_no,status,updated_at
+8,Data Structures,no,Done,
+48,Python Interview Questions,no,Done,
+47,Java Interview Questions,no,Done,22-07-2025 12:46
+46,DBMS (Database Management Systems),no,Done,22-07-2025 12:34
+45,OOP (Object-Oriented Programming),no,Done,2025-07-22 12:54:59
+44,Agorithms,no,Done,2025-07-22 12:54:59
+49,Javascript Interview Questions,no,Done,2025-07-22 12:54:59
+50,C Interview Questions,no,Done,2025-07-22 12:54:59
+51,AWS Cloud Interview Questions,no,Done,2025-07-22 12:54:59
+52,Reactjs Interview Questions,no,Done,2025-07-22 12:54:59
+53,DevOps and CI-CD Basics,no,Done,2025-07-22 12:54:59
+68,Machine Learning,no,Done,2025-07-22 12:54:59
